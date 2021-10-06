@@ -1,20 +1,26 @@
-import DataService from "../services/DataService.js";
-import {vistaAnuncios} from "../views.js"
+import { vistaAnuncios } from "../views.js"
+import DataService from "../services/DataService.js"
+import ControladorMensajesError from "./ControladorMensajesError.js";
 
-export default async function (elementoDom){
-    try{
-        const anuncios = await DataService.cogerAnuncios();
 
-        for (const anuncio of anuncios){
-            //creo un elemento article por cada anuncio
-            const anuncioListado = document.createElement("article");
-            //lo inserto en el HTML
-            const anuncioHTML = vistaAnuncios(anuncio);
-            anuncioListado.innerHTML = anuncioHTML;
-            //le añado el anuncio al padre
-            elementoDom.appendChild(anuncioListado);
+export default class ControladorListaAnuncios {
+    contructor(elemento, controladorMensajesError){
+        this.elemento = elemento;
+        this.controladorMensajesError = controladorMensajesError;
     }
-} catch (error){
-        alert(error)
+    async renderizarAnuncios(){
+        try{
+            const anuncios = await DataService.cogerAnuncios();
+            for(const anuncio of anuncios){
+                const elementoAnuncio = document.createElement("article");
+                elementoAnuncio.innerHTML = vistaAnuncios(anuncio);
+                this.elemento.appendChild(elementoAnuncio);
+            }
+        } catch (error) {
+            this.controladorMensajesError.mostrarError(error)
+        }
+        
     }
-};
+
+
+}

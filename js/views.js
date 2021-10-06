@@ -6,3 +6,10 @@ export function vistaAnuncios(anuncio){
     <p class = "tags">${anuncio.tags}</p>
 </div>`
 }
+
+export function vistaError(error){
+    return `<div class="error">
+    ${error}
+    <button>Cerrar</button>
+    </div>`
+}
