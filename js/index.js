@@ -16,7 +16,6 @@ window.addEventListener("DOMContentLoaded", function(){
 
     controladorListaAnuncios.renderizarAnuncios();
 
-   
 })
 
 

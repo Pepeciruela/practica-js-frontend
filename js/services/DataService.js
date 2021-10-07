@@ -1,34 +1,12 @@
+const url = 'http://localhost:8000/api/anuncios'
+
 export default {
-    cogerAnuncios : function(){
-        return [
-            {
-            nombre : "Bicicleta",
-            venta: true,
-            precio: 230.15,
-            foto: "bici.png",
-            tags: [ "lifestyle", "motor"]
-            },
-            {
-            nombre: "iPhone 3GS",
-            venta: false,
-            precio: 50.00,
-            foto: "iphone.png",
-            tags: [ "lifestyle", "mobile"]
-            },
-            {
-            nombre: "Patinete",
-            venta: true,
-            precio: 24.00,
-            foto: "patin.png",
-            tags: [ "lifestyle"]
-            },
-            {
-            nombre: "Motocicleta",
-            venta: false,
-            precio: 1500.00,
-            foto: "moto.png",
-            tags: [ "lifestyle", "motor"]
-            }
-            ]
+    obtenerAnuncios: async function() {
+        const responder = await fetch(url);
+        if(responder.ok){
+            return await responder.json()
+        } else {
+            throw new Error ('Error al recuperar los anuncios')
+        }
     }
-};
+}

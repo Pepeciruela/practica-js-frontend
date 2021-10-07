@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro - Nodepop</title>
 </head>
 <body>
-    
+    <h1>Crea tu cuenta en Nodepop</h1>
+    <form novalidate>
+        <div>
+            <input type="text" name="nombreusuario" placeholder="Escribe aquí su nombre de usuario" required>
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Escribe aquí tu contraseña" required>
+        </div>
+        <div>
+            <input type="password" name="confirmarpassword" placeholder="Confirma tu contraseña" required>
+        </div>
+        <div>
+            <button type="submit" disabled> Regístrate </button>
+        </div>
+    </form>
+    <script type="module" src="js/registroUsuario.js"></script>
 </body>
 </html>

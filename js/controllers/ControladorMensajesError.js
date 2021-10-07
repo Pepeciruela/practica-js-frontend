@@ -5,8 +5,8 @@ export default class ControladorMensajesError {
         this.elemento = elemento;
     }
 
-    mostrarError(error){
-        this.elemento.innerHTML = vistaError(error);
+    mostrarError(mensaje){
+        this.elemento.innerHTML = vistaError(mensaje);
         const boton = this.elemento.querySelector("button");
         boton.addEventListener("click", () => {
             this.ocultarError()

@@ -1,7 +1,5 @@
 import { vistaAnuncios } from "../views.js"
 import DataService from "../services/DataService.js"
-import ControladorMensajesError from "./ControladorMensajesError.js";
-
 
 export default class ControladorListaAnuncios {
     contructor(elemento, controladorMensajesError){
@@ -9,18 +7,17 @@ export default class ControladorListaAnuncios {
         this.controladorMensajesError = controladorMensajesError;
     }
     async renderizarAnuncios(){
+        debugger
         try{
-            const anuncios = await DataService.cogerAnuncios();
+            const anuncios = await DataService.obtenerAnuncios();
             for(const anuncio of anuncios){
                 const elementoAnuncio = document.createElement("article");
                 elementoAnuncio.innerHTML = vistaAnuncios(anuncio);
                 this.elemento.appendChild(elementoAnuncio);
             }
-        } catch (error) {
+        } catch(error) {
             this.controladorMensajesError.mostrarError(error)
         }
         
     }
-
-
 }
