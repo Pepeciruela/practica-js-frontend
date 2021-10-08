@@ -6,8 +6,8 @@ export default class ControladorRegistroUsuarios {
         this.eventosEscucha();
     }
 
-    passwordSonIguales(comprobarPassword){
-        const inputPassword = this.element.querySelectorAll('input[type="password"]')
+    passwordSonIguales(){
+        const inputPassword = this.elemento.querySelectorAll('input[type="password"]')
         let password = []
         for (const input of inputPassword){
             if (password.includes(input.value)===false){
@@ -50,12 +50,12 @@ export default class ControladorRegistroUsuarios {
             })
         })
 
-        this.elemento.querySelectorAll('input').forEach(input =>{
-            input.addEventListener('input', () => {
+        this.elemento.querySelectorAll('input').forEach(inputElemento =>{
+            inputElemento.addEventListener('input', () => {
                 if(this.elemento.checkValidity()){
-                    this.elemento.querySelector('button').removeAttribute('disable')
+                    this.elemento.querySelector('button').removeAttribute('disabled')
                 } else {
-                    this.elemento.querySelector('button').setAttribute('disable', true)
+                    this.elemento.querySelector('button').setAttribute('disabled', true)
                 }
             })
             

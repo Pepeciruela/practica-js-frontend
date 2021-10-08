@@ -15,7 +15,7 @@ export default class ControladorListaAnuncios {
                 this.elemento.appendChild(elementoAnuncio)
             }
         } catch(error) {
-            //this.controladorMensajesError.mostrarError(error)
+            this.controladorMensajesError.mostrarError(error)
         }
         
     }
