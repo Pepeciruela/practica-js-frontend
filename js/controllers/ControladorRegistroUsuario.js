@@ -1,4 +1,5 @@
-import DataService from '../services/DataService.js'
+import DataService from '../services/DataService.js';
+import PubSub from '../services/PubSub.js';
 
 export default class ControladorRegistroUsuarios {
     constructor(elemento){
@@ -33,14 +34,23 @@ export default class ControladorRegistroUsuarios {
             evento.preventDefault();
 
             if(this.checkValidity()){
-                console.log('Formuario OK')
+                //console.log('Formuario OK')
+                try{
+                    const datos = new FormData(this)
+                    const nombreusuario = datos.get('nombreusuario')
+                    const password = datos.get('password')
+                    const resultado = await DataService.registrarUsuario(nombreusuario, password)
+                    PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Registro realizado correctamente')
+                } catch (error) {
+                    PubSub.publish('MOSTRAR_ERROR', error)
+                }
             } else {
                 let mensajeError =''
                 for (const element of this.elements) {
                     if(element.validity.valid === false){
                         mensajeError += `Error en el campo ${element.name}: ${element.validationMessage}`
                     }
-                } alert(mensajeError)
+                } PubSub.publish('MOSTRAR_ERROR', mensajeError)
             }
         })
 

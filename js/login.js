@@ -1,4 +1,4 @@
-import ControladorRegistroUsuarios from "./controllers/ControladorRegistroUsuario.js";
+import ControladorRegistroUsuarios from "./controllers/ControladorLogin.js";
 import ControladorMensajes from './controllers/ControladorMensajes.js'
 
 window.addEventListener("DOMContentLoaded", function(){
@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", function(){
     const formulario = document.querySelector("form");
 
     //2. Crear una instancia del controlador en el formulario
-    const controlador = new ControladorRegistroUsuarios(formulario);
+    const controlador = new ControladorLogin(formulario);
 
     //
     const mensaje = document.querySelector('.mensaje_error')

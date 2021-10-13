@@ -13,3 +13,10 @@ export function vistaError(error){
     <button>Cerrar</button>
     </div>`
 }
+
+export function successView(mensaje){
+    return `<div class="success">
+    ${mensaje}
+    <button>Cerrar</button>
+    </div>`
+}
