@@ -1,5 +1,5 @@
 import PubSub from '../services/PubSub.js'
-import {vistaError, successview} from '../views.js'
+import {vistaError, successView} from '../views.js'
 
 
 export default class ControladorMensajes {

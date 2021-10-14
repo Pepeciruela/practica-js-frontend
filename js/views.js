@@ -1,10 +1,13 @@
 export function vistaAnuncios(anuncio){
-    return `<div class = "post">
+    return `<a href='detalle-anuncio.html?=${anuncio.id}'>
+    <div class = "post">
     <strong class = "nombre">${anuncio.nombre}</strong>
     <p class = "venta">${anuncio.venta}</p>
     <p class = "precio">${anuncio.precio}</p>
     <p class = "tags">${anuncio.tags}</p>
-</div>`
+</div>
+<hr>
+</a>`
 }
 
 export function vistaError(error){
@@ -19,4 +22,15 @@ export function successView(mensaje){
     ${mensaje}
     <button>Cerrar</button>
     </div>`
+}
+
+export function vistaDetalleAnuncio(anuncio){
+    return `
+    <strong class = "nombre">${anuncio.nombre}</strong>
+    <p class = "venta">${anuncio.venta}</p>
+    <p class = "precio">${anuncio.precio}</p>
+    <p class = "tags">${anuncio.tags}</p>
+    `
+
+
 }

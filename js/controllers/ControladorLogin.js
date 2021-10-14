@@ -17,9 +17,11 @@ export default class ControladorLogin {
                 const datos = new FormData(this.elemento)
                 const nombreusuario = datos.get('nombreusuario')
                 const password = datos.get('password')
+                const url = new URLSearchParams(window.location.search)
+                const next = url.get('next') || '/'
                 try{
                     const resultado = await DataService.login(nombreusuario, password)
-                    location.href = '/'
+                    location.href = next
                 } catch {
                     PubSub.publish(PubSub.events.MOSTRAR_ERROR, error)
                 }

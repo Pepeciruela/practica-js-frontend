@@ -2,8 +2,8 @@
 
 export default {
     obtenerAnuncios: async function() {
-        const url = 'http://localhost:8000/api/anuncios?_expand=user'
-        const responder = await fetch(url);
+        const url = 'http://localhost:8000/api/anuncios'
+        const responder = await fetch(url)
         if(responder.ok){
             return await responder.json()
         } else {
@@ -11,7 +11,18 @@ export default {
         }
     },
 
+    obtenerAnuncio: async function(id){
+        const url = `http://localhost:8000/api/anuncios/${id}`
+        const responder = await fetch(url)
+        if (responder.ok){
+        const anuncio = await responder.json()
+        } else {
+            throw new Error ('Error al cargar el anuncio')
+        }
+    },
+
     post: async function(url, body) {
+        debugger
         const solicitudConfiguracion = {
             method: 'POST',
             headers:{

@@ -36,6 +36,7 @@ export default class ControladorRegistroUsuarios {
             if(this.checkValidity()){
                 //console.log('Formuario OK')
                 try{
+                    debugger
                     const datos = new FormData(this)
                     const nombreusuario = datos.get('nombreusuario')
                     const password = datos.get('password')
