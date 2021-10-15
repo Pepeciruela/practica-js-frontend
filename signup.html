@@ -5,24 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - Nodepop</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Crea tu cuenta en Nodepop</h1>
-    <div class = 'mensaje_error'></div>
+    <div class="error-message"></div>
     <form novalidate>
         <div>
-            <input type="text" name="nombreusuario" placeholder="Escribe aquí su nombre de usuario" required autofocus>
+            <input type="text" name="username" placeholder="Escribe aquí tu usuario" required autofocus>
         </div>
         <div>
             <input type="password" name="password" placeholder="Escribe aquí tu contraseña" required>
         </div>
         <div>
-            <input type="password" name="confirmarpassword" placeholder="Confirma tu contraseña" required>
+            <input type="password" name="passwordConfirmation" placeholder="Confirma tu contraseña" required>
         </div>
         <div>
-            <button type="submit" disabled> Regístrate </button>
+            <button type="submit" disabled>Registrarse</button>
         </div>
     </form>
-    <script type="module" src="js/registroUsuario.js"></script>
+    <script type="module" src="js/signup.js"></script>
 </body>
 </html>

@@ -3,14 +3,14 @@ const hOP = topics.hasOwnProperty;
 
 export default {
 
-events: {
+  events: {
     SHOW_SUCCESS: 'SHOW_SUCCESS',
-    MOSTRAR_ERROR: 'MOSTRAR_ERROR',
+    SHOW_ERROR: 'SHOW_ERROR',
     SHOW_LOADING: 'SHOW_LOADING',
     HIDE_LOADING: 'HIDE_LOADING'
-},
+  },
 
-subscribe: function (topic, listener) {
+  subscribe: function (topic, listener) {
     // Create the topic's object if not yet created
     if (!hOP.call(topics, topic)) topics[topic] = [];
 
@@ -19,20 +19,20 @@ subscribe: function (topic, listener) {
 
     // Provide handle back for removal of topic
     return {
-    remove: function () {
+      remove: function () {
         delete topics[topic][index];
-    },
+      },
     };
-},
+  },
 
-publish: function (topic, info) {
+  publish: function (topic, info) {
     // If the topic doesn't exist, or there's no listeners in queue, just leave
     if (!hOP.call(topics, topic)) return;
 
     // Cycle through topics queue, fire!
     topics[topic].forEach(function (item) {
-    item(info != undefined ? info : {});
+      item(info != undefined ? info : {});
     });
 
-},
+  },
 };

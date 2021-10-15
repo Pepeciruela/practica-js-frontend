@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Anuncio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Nuevo Anuncio</h1>
+    <div class="messages"></div>
+    <form novalidate>
+        <div>
+            <label for="nombre">Nombre del artículo</label>
+            <input type="text" name="nombre" placeholder="Escribe el nombre del articulo" required>
+        </div>
+        <div>
+            <label for="venta">Artículo en compra o en venta</label>
+            <select name="venta">
+                <option selected value="0"> Elige una opción </option>
+                    <option value="Compra">Compra</option> 
+                    <option value="Venta">Venta</option> 
+                </optgroup> 
+            </select>
+        </div>
+        <div>
+            <label for="precio">Precio del artículo</label>
+            <input type="number" name="precio"  min ="1"  pattern="^[1-9]\d*$" placeholder="Escribe el precio del articulo en €" required>
+        </div>
+        <div>
+            <label for="foto">Url a la imagen del producto</label>
+            <input type="url" name="foto"  placeholder="URL a la imagen del producto">
+        </div>
+        <div>
+            <label for="tags">Etiquetas</label>
+            <select name="tags">
+                <option selected value="0"> Elige una opción </option>
+                    <option value="Lifestyle">Lifestyle</option> 
+                    <option value="Motor">Motor</option> 
+                    <option value="Mobile">Mobile</option> 
+                </optgroup> 
+             </select>
+        </div>
+
+
+
+        
+        <button type="submit">Crear</button>
+    </form>
+    <script type="module" src="js/new.js"></script>
+</body>
+</html>

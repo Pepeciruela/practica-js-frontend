@@ -1,36 +1,51 @@
-export function vistaAnuncios(anuncio){
-    return `<a href='detalle-anuncio.html?=${anuncio.id}'>
-    <div class = "post">
-    <strong class = "nombre">${anuncio.nombre}</strong>
-    <p class = "venta">${anuncio.venta}</p>
-    <p class = "precio">${anuncio.precio}</p>
-    <p class = "tags">${anuncio.tags}</p>
-</div>
-<hr>
+export function adView(ad) {
+    return `<a href="/detail.html?id=${ad.id}">
+    <div class="post">
+        <strong class="author">${ad.nombre}</strong>
+        <p class="venta">${ad.venta}</p>
+        <p class="precio">${ad.precio}</p>
+        <p class="foto">${ad.foto}</p>
+        <p class="tags">${ad.tags}</p>
+    </div>
+    <hr>
 </a>`
 }
 
-export function vistaError(error){
+export function errorView(message) {
     return `<div class="error">
-    ${error}
-    <button>Cerrar</button>
+        ${message}
+        <button>Cerrar</button>
     </div>`
 }
 
-export function successView(mensaje){
+
+export function successView(message) {
     return `<div class="success">
-    ${mensaje}
-    <button>Cerrar</button>
+        ${message}
+        <button>Cerrar</button>
     </div>`
 }
 
-export function vistaDetalleAnuncio(anuncio){
+
+export function loaderView() {
+    return '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>'
+}
+
+
+export function adDetailView(ad) {
+    if (ad === null) {
+        return '<h1>:( NO HAY ANUNCIOS</h1>'
+    }
+    let button = ''
+    if (ad.canBeDeleted) {
+        button = '<button class="delete">Borrar</button>'
+    }
     return `
-    <strong class = "nombre">${anuncio.nombre}</strong>
-    <p class = "venta">${anuncio.venta}</p>
-    <p class = "precio">${anuncio.precio}</p>
-    <p class = "tags">${anuncio.tags}</p>
+    <strong class="author">${ad.nombre}</strong>
+    <p class="venta">${ad.venta}</p>
+    <p class="precio">${ad.precio}</p>
+    <p class="foto">${ad.foto}</p>
+    <p class="tags">${ad.tags}</p>
+    ${button}
     `
-
-
 }

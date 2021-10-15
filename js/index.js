@@ -1,19 +1,19 @@
+import ErrorMessageController from './controllers/ErrorMessageController.js'
+import SearchController from './controllers/SearchController.js'
+import AdListController from './controllers/AdListController.js'
 
-import ControladorListaAnuncios from "./controllers/ControladorListaAnuncios.js"
-import ControladorMensajesError from "./controllers/ControladorMensajesError.js";
+window.addEventListener('DOMContentLoaded', function() {
 
-window.addEventListener("DOMContentLoaded", function(){
+    const errorDiv = document.querySelector('.error-message')
+    const errorMessageController = new ErrorMessageController(errorDiv)
 
-     //Controlador pintar errores
-    const mensajesError = document.querySelector(".mensaje_error");
-    const controladorMensajesError = new ControladorMensajesError(mensajesError);
+    const adListDiv = document.querySelector('.ad-list')
 
-    //Controlador pintar anuncios
-    const listaAnuncios = document.querySelector(".lista_anuncios");
-    const controladorListaAnuncios = new ControladorListaAnuncios(listaAnuncios, controladorMensajesError);
+    const adListController = new AdListController(adListDiv, errorMessageController)
 
-    controladorListaAnuncios.renderizarAnuncios();
+    adListController.renderAds()
+
+    const search = document.querySelector('#search')
+    new SearchController(search)
 
 })
-
-
