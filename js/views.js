@@ -1,11 +1,14 @@
 export function adView(ad) {
     return `<a href="/detail.html?id=${ad.id}">
-    <div class="post">
-        <strong class="author">${ad.nombre}</strong>
-        <p class="venta">${ad.venta}</p>
-        <p class="precio">${ad.precio}</p>
-        <p class="foto">${ad.foto}</p>
-        <p class="tags">${ad.tags}</p>
+    <div class="card mb-3">
+    <h3 class="card-header">${ad.nombre}</h3>
+    <img src="${ad.foto}" style= "max-width: 300px; max-height: 300px;">
+    </img>
+    <ul class="list-group list-group-flush"> 
+        <li class="list-group-item">${ad.venta}</li>
+        <li class="list-group-item">Precio:<span>${ad.precio}</span> €</li>
+        <li class="list-group-item">${ad.tags}</li>
+    </ul>
     </div>
     <hr>
 </a>`
@@ -34,18 +37,23 @@ export function loaderView() {
 
 export function adDetailView(ad) {
     if (ad === null) {
-        return '<h1>:( NO HAY ANUNCIOS</h1>'
+        return '<h1>NO HAY ANUNCIOS QUE MOSTRAR</h1>'
     }
     let button = ''
     if (ad.canBeDeleted) {
         button = '<button class="delete">Borrar</button>'
     }
     return `
-    <strong class="author">${ad.nombre}</strong>
-    <p class="venta">${ad.venta}</p>
-    <p class="precio">${ad.precio}</p>
-    <p class="foto">${ad.foto}</p>
-    <p class="tags">${ad.tags}</p>
+    <div class="card mb-3">
+    <h3 class="card-header">${ad.nombre}</h3>
+    <img src="${ad.foto}" style= "max-width: 300px; max-height: 300px;">
+    </img>
+    <ul class="list-group list-group-flush"> 
+        <li class="list-group-item">${ad.venta}</li>
+        <li class="list-group-item">Precio:<span>${ad.precio}</span> €</li>
+        <li class="list-group-item">${ad.tags}</li>
+    </ul>
+    </div>
     ${button}
     `
 }

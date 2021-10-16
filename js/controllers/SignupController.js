@@ -19,12 +19,10 @@ export default class SignupController {
         }
 
         if (passwords.length == 1) {
-            // esta bien
             for (const input of inputsPassword) {
                 input.setCustomValidity('')
             }
         } else {
-            // esta mal
             for (const input of inputsPassword) {
                 input.setCustomValidity('Las password no son iguales')
             }

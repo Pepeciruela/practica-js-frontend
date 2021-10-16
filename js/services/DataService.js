@@ -4,10 +4,28 @@ export default {
 
     parseAds: function(ad) {
         ad.date = ad.date || ad.updatedAt
-        /*ad.nombre = ad.nombre.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')*/
-        /*ad.author = ad.user.username*/
+        ad.nombre = ad.nombre.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        /*ad.venta = ad.venta.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')*/
+        /*ad.precio = ad.precio.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        /*ad.foto =  ad.foto.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        /*ad.tags = ad.tags.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')*/
         ad.canBeDeleted = ad.userId === this.getAuthUserId()
         return ad
+    },
+
+    searchAd: async function(nombreAd){
+        const url = `http://localhost:8000/api/ad?nombre_like=${nombreAd}`
+        const response = await fetch(url)
+        if(response.ok){
+            const ad = await response.json()
+            return this.parseAds(ad)
+        } else {
+            if (response.status === 404) {
+                return null
+            } else {
+                throw new Error('Error al cargar el anuncio')
+            }
+        }
     },
     
     getAds: async function() {
@@ -35,7 +53,6 @@ export default {
             }
         }
     },
-
 
     delete: async function(url, body={}) {
         return await this.request('DELETE', url, body)
@@ -115,7 +132,7 @@ export default {
             const user = JSON.parse(userJSON)
             return user.userId
         } catch (error) {
-            console.error('Error while decoding JWT Token', error)
+            console.error('Error al decodificar el Token JWT', error)
             return null
         }
     }

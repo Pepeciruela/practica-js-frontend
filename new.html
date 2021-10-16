@@ -5,48 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Anuncio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/boostrap.css">
 </head>
 <body>
     <h1>Nuevo Anuncio</h1>
     <div class="messages"></div>
     <form novalidate>
-        <div>
-            <label for="nombre">Nombre del artículo</label>
-            <input type="text" name="nombre" placeholder="Escribe el nombre del articulo" required>
+        <div class="form-group">
+            <label for="nombre" class="form-label mt-4">Nombre del artículo</label>
+            <input type="text" name="nombre" class="form-control" placeholder="Escribe el nombre del articulo" required>
         </div>
-        <div>
-            <label for="venta">Artículo en compra o en venta</label>
-            <select name="venta">
-                <option selected value="0"> Elige una opción </option>
-                    <option value="Compra">Compra</option> 
-                    <option value="Venta">Venta</option> 
-                </optgroup> 
+        <div class="form-group">
+            <label for="venta" class="form-label mt-4">Artículo en compra o en venta</label>
+            <select class="form-select" name="venta">
+                <option value="Compra">Compra</option> 
+                <option value="Venta">Venta</option>
             </select>
         </div>
-        <div>
-            <label for="precio">Precio del artículo</label>
-            <input type="number" name="precio"  min ="1"  pattern="^[1-9]\d*$" placeholder="Escribe el precio del articulo en €" required>
+        <div class="form-group">
+            <label for="precio" class="form-label mt-4">Precio del artículo</label>
+            <input type="number" name="precio" class="form-control" name="precio"  min ="1"  pattern="^[1-9]\d*$" placeholder="Escribe el precio del articulo en €" required>
         </div>
-        <div>
-            <label for="foto">Url a la imagen del producto</label>
-            <input type="url" name="foto"  placeholder="URL a la imagen del producto">
+        <div class="form-group">
+            <label for="foto" class="form-label mt-4">Url a la imagen del producto</label>
+            <input type="url" name="foto"  class="form-control" placeholder="URL a la imagen del producto">
         </div>
-        <div>
-            <label for="tags">Etiquetas</label>
-            <select name="tags">
-                <option selected value="0"> Elige una opción </option>
-                    <option value="Lifestyle">Lifestyle</option> 
-                    <option value="Motor">Motor</option> 
-                    <option value="Mobile">Mobile</option> 
-                </optgroup> 
-             </select>
+        <div class="form-group">
+            <label for="tags" class="form-label mt-4">Etiquetas</label>
+            <select multiple="" name="tags" class="form-select">
+                <option value="Lifestyle">Lifestyle</option> 
+                <option value="Motor">Motor</option> 
+                <option value="Mobile">Mobile</option> 
+            </select>
         </div>
-
-
-
-        
-        <button type="submit">Crear</button>
+        <br>
+        <button type="submit" class="btn btn-success">Crear</button>
     </form>
     <script type="module" src="js/new.js"></script>
 </body>
