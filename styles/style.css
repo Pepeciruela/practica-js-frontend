@@ -62,3 +62,21 @@
   .form-group{
     width: 40%
   }
+
+  .foto{
+    width: 300px;
+    height: 300px;
+  }
+
+  #post{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #card-header{
+    float: left;
+    margin-left: 10px;
+    width: 300px;
+    height: 100%;
+  
+  }

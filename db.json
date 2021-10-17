@@ -1,0 +1,48 @@
+{
+  "users": [],
+  "ad": [
+    {
+      "id": 1,
+      "nombre": "Bicicleta",
+      "venta": "venta",
+      "precio": 230.15,
+      "foto": "https://cdn.pixabay.com/photo/2014/07/23/10/50/bike-400113_960_720.jpg",
+      "tags": [
+        "lifestyle",
+        "motor"
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "iPhone 3GS",
+      "venta": "compra",
+      "precio": 50,
+      "foto": "https://cdn.pixabay.com/photo/2017/07/04/08/22/iphone-2470313_960_720.png",
+      "tags": [
+        "lifestyle",
+        "mobile"
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Patinete",
+      "venta": "venta",
+      "precio": 24,
+      "foto": "https://cdn.pixabay.com/photo/2015/11/07/11/13/skateboard-1030929_960_720.jpg",
+      "tags": [
+        "lifestyle"
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Motocicleta",
+      "venta": "compra",
+      "precio": 1500,
+      "foto": "https://cdn.pixabay.com/photo/2016/04/07/06/53/bmw-1313343_960_720.jpg",
+      "tags": [
+        "lifestyle",
+        "motor"
+      ]
+    }
+  ]
+}
