@@ -4,7 +4,7 @@ import PubSub from "../services/PubSub.js"
 export default class SignupController {
 
     constructor(element) {
-        this.element = element 
+        this.element = element
         this.attachEventListeners()
     }
 
@@ -39,10 +39,10 @@ export default class SignupController {
             if (this.checkValidity()) {
                 try {
                     const data = new FormData(this)
-                    const username = data.get('username') 
-                    const password = data.get('password') 
+                    const username = data.get('username')  
+                    const password = data.get('password')  
                     const result = await DataService.registerUser(username, password)
-                    PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Registrado correctamente')
+                    PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Usuarios registrado correctamente')
                 } catch (error) {
                     PubSub.publish(PubSub.events.SHOW_ERROR, error)
                 }

@@ -10,37 +10,37 @@
 </head>
 <body>
     <h1>Nuevo Anuncio</h1>
-    <div class="messages"></div>
+    <div class="anuncios"></div>
     <form novalidate>
         <div class="form-group">
-            <label for="nombre" class="form-label mt-4">Nombre del artículo</label>
-            <input type="text" name="nombre" class="form-control" placeholder="Escribe el nombre del articulo" required>
+            <label class="col-form-label mt-4" for="nombre">Nombre del producto</label>
+            <input type="text" name="nombre" class="form-control" placeholder="Escribe el nombre del producto" required autofocus>
         </div>
         <div class="form-group">
-            <label for="venta" class="form-label mt-4">Artículo en compra o en venta</label>
-            <select class="form-select" name="venta">
-                <option value="Compra">Compra</option> 
-                <option value="Venta">Venta</option>
+            <label for="venta" class="form-label mt-4">Producto en compra o venta</label>
+            <select class="form-select" name="venta" required>
+            <option value="compra">Compra</option>
+            <option value="venta">Venta</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="precio" class="form-label mt-4">Precio del artículo</label>
-            <input type="number" name="precio" class="form-control" name="precio"  min ="1"  pattern="^[1-9]\d*$" placeholder="Escribe el precio del articulo en €" required>
+            <label class="col-form-label mt-4" for="precio">Precio del producto</label>
+            <input type="number" name="precio" class="form-control" min="1" placeholder="Escribe el precio del producto" required>
         </div>
         <div class="form-group">
-            <label for="foto" class="form-label mt-4">Url a la imagen del producto</label>
-            <input type="url" name="foto"  class="form-control" placeholder="URL a la imagen del producto">
+            <label class="col-form-label mt-4" for="foto">Url de la imagen del producto</label>
+            <input type="url" name="foto" class="form-control" placeholder="Url a la imagen del producto">
         </div>
         <div class="form-group">
-            <label for="tags" class="form-label mt-4">Etiquetas</label>
-            <select multiple="" name="tags" class="form-select">
-                <option value="Lifestyle">Lifestyle</option> 
-                <option value="Motor">Motor</option> 
-                <option value="Mobile">Mobile</option> 
+            <label for="tags" class="form-label mt-4">Etiquetas del producto</label>
+            <select multiple="" class="form-select" name="tags">
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Motor">Motor</option>
+            <option value="Mobile">Mobile</option>
             </select>
         </div>
-        <br>
-        <button type="submit" class="btn btn-success">Crear</button>
+    <br>
+        <button type="submit" class="btn btn-primary">Crear anuncio</button>
     </form>
     <script type="module" src="js/new.js"></script>
 </body>

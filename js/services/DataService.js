@@ -2,30 +2,12 @@
 
 export default {
 
-    parseAds: function(ad) {
+    parseAd: function(ad) {
         ad.date = ad.date || ad.updatedAt
-        ad.nombre = ad.nombre.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-        /*ad.venta = ad.venta.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')*/
-        /*ad.precio = ad.precio.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-        /*ad.foto =  ad.foto.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-        /*ad.tags = ad.tags.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')*/
+        /*ad.message = ad.message.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        ad.author = ad.user.username*/
         ad.canBeDeleted = ad.userId === this.getAuthUserId()
         return ad
-    },
-
-    searchAd: async function(nombreAd){
-        const url = `http://localhost:8000/api/ad?nombre_like=${nombreAd}`
-        const response = await fetch(url)
-        if(response.ok){
-            const ad = await response.json()
-            return this.parseAds(ad)
-        } else {
-            if (response.status === 404) {
-                return null
-            } else {
-                throw new Error('Error al cargar el anuncio')
-            }
-        }
     },
     
     getAds: async function() {
@@ -33,18 +15,18 @@ export default {
         const response = await fetch(url)
         if (response.ok) {
             const ads = await response.json()
-            return ads.map(ad => this.parseAds(ad))
+            return ads.map(ad => this.parseAd(ad))
         } else {
             throw new Error('Error al recuperar los anuncios')
         }
     },
 
-    getAdsDetail: async function(adID) {
+    getAdDetail: async function(adID) {
         const url = `http://localhost:8000/api/ad/${adID}`
         const response = await fetch(url)
         if (response.ok) {
             const ad = await response.json()
-            return this.parseAds(ad)
+            return this.parseAd(ad)
         } else {
             if (response.status === 404) {
                 return null
@@ -105,7 +87,7 @@ export default {
 
     createAd: async function(nombre, venta, precio, foto, tags) {
         const url = 'http://localhost:8000/api/ad'
-        return await this.post(url, { nombre, venta, precio, foto, tags})
+        return await this.post(url, {nombre, venta, precio, foto, tags})
     },
 
     isAuthenticed: function() {
@@ -132,7 +114,7 @@ export default {
             const user = JSON.parse(userJSON)
             return user.userId
         } catch (error) {
-            console.error('Error al decodificar el Token JWT', error)
+            console.error('Error while decoding JWT Token', error)
             return null
         }
     }

@@ -4,29 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Nodepop</title>
+    <title>Registro - Faker</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/boostrap.css">
 </head>
 <body>
-    <h1>Crea tu cuenta en Nodepop</h1>
+    <h1>Crea tu cuenta en Faker</h1>
     <div class="error-message"></div>
     <form novalidate>
-        <div class="form-group">
-            <label class="form-label mt-4">Usuario</label>
-            <input type="text" name="username" class="form-control" placeholder="Escribe aquí tu usuario" required autofocus>
-        </div>
-        <div class="form-group">
-            <label class="form-label mt-4">Password</label>
-            <input type="password" name="password" class="form-control" placeholder="Escribe aquí tu contraseña" required>
-        </div>
-        <div class="form-group">
-            <label class="form-label mt-4">Confirmacion del Password</label>
-            <input type="password" name="passwordConfirmation" class="form-control" placeholder="Confirma tu contraseña" required>
-        </div>
-        <br>
         <div>
-            <button type="submit" class="btn btn-success" disabled>Registrarse</button>
+            <input type="text" name="username" placeholder="Escribe aquí tu usuario" required autofocus>
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Escribe aquí tu contraseña" required>
+        </div>
+        <div>
+            <input type="password" name="passwordConfirmation" placeholder="Confirma tu contraseña" required>
+        </div>
+        <div>
+            <button type="submit" disabled>Regístrate</button>
         </div>
     </form>
     <script type="module" src="js/signup.js"></script>

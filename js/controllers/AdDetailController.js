@@ -12,7 +12,7 @@ export default class AdDetailController {
     async loadAd(adID) {
         PubSub.publish(PubSub.events.SHOW_LOADING)
         try {
-            const ad = await DataService.getAdsDetail(adID)
+            const ad = await DataService.getAdDetail(adID)
             this.element.innerHTML = adDetailView(ad)
             this.addDeleteButtonEventListener(ad)
         } catch (error) {

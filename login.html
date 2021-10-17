@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Nodepop</title>
+    <title>Login - Faker</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/boostrap.css">
 </head>
 <body>
-    <h1>Inicia sesión en Nodepop</h1>
+    <h1>Inicia sesión en Faker</h1>
     <div class="error-message"></div>
     <form novalidate>
-        <div class="form-group">
-            <div class="form-floating mb-3">
-            <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Escribe aquí tu usuario"required autofocus>
-            <label for="floatingInput">Usuario</label>
-            </div>
-            <div class="form-floating">
-            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Escribe aquí tu contraseña" required>
-            <label for="floatingPassword">Password</label>
-            </div>
-            <br>
-                <button type="submit" class="btn btn-success">Entrar</button>
-            </div>
+        <div>
+            <input type="text" name="username" placeholder="Escribe aquí tu usuario" required autofocus>
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Escribe aquí tu contraseña" required>
+        </div>
+        <div>
+            <button type="submit">Entrar</button>
         </div>
     </form>
     <script type="module" src="js/login.js"></script>

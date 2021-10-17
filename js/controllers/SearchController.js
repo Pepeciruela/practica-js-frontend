@@ -1,11 +1,8 @@
-import DataService from '../services/DataService.js'
-import { adView } from '../views.js'
-
 const debounce = (func, timeout = 300) => {
     let timer;
     return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    clearTimeout(timer);
+    timer = setTimeout(() => { func.apply(this, args); }, timeout);
     };
 }
 
@@ -17,22 +14,9 @@ export default class SearchController {
     }
 
     attachEventListeners() {
-        this.element.addEventListener('input', debounce(async () => {
-            this.searchAds()
+        this.element.addEventListener('input', debounce(() => {
             console.log('PUBLISH', 'SEARCH', this.element.value)
         }, 1000))
     }
 
-    async searchAds(){
-        try{
-            const ads = await DataService.searchAd()
-            for(const ad of ads){
-                console.log(ad)
-            }
-        }catch (error) {
-            this.errorMessageController.showError(error)
-    }
-
-
-}
 }

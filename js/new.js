@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function(){
 
     new AdFormController(form)
 
-    const messages = document.querySelector('.messages')
+    const messages = document.querySelector('.anuncios')
 
     new MessageController(messages)
 

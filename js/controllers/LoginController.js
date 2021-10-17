@@ -14,18 +14,18 @@ export default class LoginController {
 
             if (this.element.checkValidity()) {
                 const data = new FormData(this.element)
-                const username = data.get('username')
+                const username = data.get('username') 
                 const password = data.get('password')  
                 const url = new URLSearchParams(window.location.search)
                 const next = url.get('next') || '/'
                 try {
                     const result = await DataService.login(username, password)
-                    location.href = next
+                    location.href = next 
                 } catch (error) {
                     PubSub.publish(PubSub.events.SHOW_ERROR, error)
                 }
             } else {
-                PubSub.publish(PubSub.events.SHOW_ERROR, 'Debes rellenar ambos campos del formulario')
+                PubSub.publish(PubSub.events.SHOW_ERROR, 'Deben rellenarse ambos campos del formulario')
             }
         })
     }

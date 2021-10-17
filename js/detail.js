@@ -4,14 +4,15 @@ import AdDetailController from "./controllers/AdDetailController.js"
 
 window.addEventListener('DOMContentLoaded', function() {
 
-    const messagesDiv = document.querySelector('.messages')
+    const messagesDiv = document.querySelector('.anuncios')
     new MessageController(messagesDiv)
 
     const loaderDiv = document.querySelector('.loader')
     new LoaderController(loaderDiv)
 
+    
     const id = new URLSearchParams(window.location.search).get('id')
-
+    
     const adDiv = document.querySelector('.ad')
     new AdDetailController(adDiv, id)
 
