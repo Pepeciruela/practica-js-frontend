@@ -4,22 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Faker</title>
+    <title>Login - Nodepop</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/boostrap.css">
 </head>
 <body>
-    <h1>Inicia sesión en Faker</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html">Nodepop</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="/signup.html">Regístrate
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/new.html">Nuevo anuncio</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <input type="search" name="search" id="search" class="form-control me-sm-2" placeholder="Encuentra lo que buscas...">
+      </nav>
+  <br>
+    <h1>Inicia sesión en Nodepop</h1>
     <div class="error-message"></div>
     <form novalidate>
-        <div>
-            <input type="text" name="username" placeholder="Escribe aquí tu usuario" required autofocus>
+        <div class="form-group">
+            <label class="col-form-label mt-4" for="username">Usuario</label>
+            <input type="text" name="username" class="form-control" placeholder="Escribe aquí tu usuario" required autofocus>
+        </div>
+        <div class="form-group">
+            <label class="col-form-label mt-4" for="password">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Escribe aquí tu contraseña" required>
         </div>
         <div>
-            <input type="password" name="password" placeholder="Escribe aquí tu contraseña" required>
-        </div>
-        <div>
-            <button type="submit">Entrar</button>
+        <br>
+            <button type="submit" class="btn btn-primary">Entrar</button>
         </div>
     </form>
     <script type="module" src="js/login.js"></script>
