@@ -6,10 +6,10 @@
 - Descargar el repositorio sobre el que se sustenta el Backend de la aplicación:
 - > https://github.com/kasappeal/sparrest.js
 - Abrir dos terminales diferentes, uno para la carpeta del Backend y otro para este repositorio.
-- Copiar el archivo ```db.json```en el repositorio del Backend para que actue como fichero de la base de datos.
+- Copiar el archivo ```db.json``` en el repositorio del Backend para que actue como fichero de la base de datos.
 - Inicializa el Backend
-    - ```npm i```para instalar las dependencias
-    - ```npm start```para arrancar el servidor
+    - ```npm i``` para instalar las dependencias
+    - ```npm start``` para arrancar el servidor
 - Una vez arrancado ves al terminar de la aplicación e inicia la pagina principal ```ìndex.html```
 - Una vez estés dentro de la página principal tendrás acceso a las siguientes funcionalidades:
 
