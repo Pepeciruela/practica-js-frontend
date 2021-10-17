@@ -4,8 +4,8 @@ export default {
 
     parseAd: function(ad) {
         ad.date = ad.date || ad.updatedAt
-        /*ad.message = ad.message.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-        ad.author = ad.user.username*/
+        ad.nombre = ad.nombre.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        ad.foto = ad.foto.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
         ad.canBeDeleted = ad.userId === this.getAuthUserId()
         return ad
     },

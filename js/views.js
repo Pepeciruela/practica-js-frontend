@@ -1,11 +1,15 @@
 export function adView(ad) {
     return `<a href="/detail.html?id=${ad.id}">
     <div name="post">
-        <p name="nombre">${ad.nombre}</p>
-        <p name="venta">${ad.venta}</p>
-        <p name="precio">${ad.precio}</p>
-        <img src="${ad.foto}" name="foto">
-        <p name="tags">${ad.tags}</p>
+        <div class="card mb-3">
+        <h3 class="card-header">${ad.nombre}</h3>
+        <img src="${ad.foto}" style= "max-width: 300px; max-height: 300px;"></img>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">${ad.venta}</li>
+        <li class="list-group-item">Precio:<span>${ad.precio}</span> €</li>
+        <li class="list-group-item">${ad.tags}</li>
+        </ul>
+        </div>
     </div>
     <br>
 </a>`
@@ -39,11 +43,15 @@ export function adDetailView(ad) {
     }
     return `
     <div name="post">
-        <p name="nombre">${ad.nombre}</p>
-        <p name="venta">${ad.venta}</p>
-        <p name="precio">${ad.precio}</p>
-        <img src="${ad.foto}" name="foto">
-        <p name="tags">${ad.tags}</p>
+        <div class="card mb-3">
+        <h3 class="card-header">${ad.nombre}</h3>
+        <img src="${ad.foto}" style= "max-width: 300px; max-height: 300px;"></img>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">${ad.venta}</li>
+        <li class="list-group-item">Precio:<span>${ad.precio}</span> €</li>
+        <li class="list-group-item">${ad.tags}</li>
+        </ul>
+        </div>
     </div>
     <br>
         ${button}
